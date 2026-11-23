@@ -1,0 +1,20 @@
+{
+  "name": "chat-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "npm run build -w client",
+    "start": "npm run build && npm start -w server",
+    "test": "npm run test:server && npm run test:e2e",
+    "test:server": "npm test -w server",
+    "test:e2e": "playwright test",
+    "media": "node scripts/media.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "concurrently": "^9.0.0"
+  }
+}
